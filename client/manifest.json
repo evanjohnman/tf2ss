@@ -6,14 +6,14 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "icon128.png",
+    "default_icon": "imgs/icon128.png",
     "default_popup": "popup.html"
   },
 
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "imgs/icon16.png",
+    "48": "imgs/icon48.png",
+    "128": "imgs/icon128.png"
   },
 
   "permissions": [
