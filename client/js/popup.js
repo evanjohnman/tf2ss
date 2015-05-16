@@ -1,34 +1,35 @@
-
-function submit(){
-
-	document.getElementById("sbutton").innerHTML="Querying server...";
+function submit()
+{
+	//TODO: Make this actually work
+	$("#sbutton").html("Querying server...");
 	var xmlhttp;
 
 	if (window.XMLHttpRequest)
-{
+	{
 		// code for IE7+, Firefox, Chrome, Opera, Safari
-			xmlhttp=new XMLHttpRequest();
-
+		xmlhttp=new XMLHttpRequest();
 	}
-else{
-	// code for IE6, IE5
-	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	else
+	{
+		// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 	}
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
-			document.getElementById("serverstats-wrapper").innerHTML=xmlhttp.responseText;
+			$("#serverstats-wrapper").html(xmlhttp.responseText);
 		}
 	}
 
-	xmlhttp.open("GET","http://sw.googleplusgaming.site.nfoservers.com/PHP-Source-Query-Class/RconExample.php?"+ $("#s").serialize(), true);
-		xmlhttp.send();
+	xmlhttp.open("GET","http://tf2ss.googleplusgaming.site.nfoservers.com/?"+ $("#s").serialize(), true);
+	xmlhttp.send();
 
 	$("#serverstats-wrapper").html(xmlhttp.responseText);
 
-	document.getElementById("sbutton").innerHTML="Submit";
+	$("#sbutton").html("Submit");
 }
 
+// Also launches submit button on press of enter key
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('button').addEventListener('click', submit);
 });
