@@ -19,7 +19,7 @@ function submit()
 		{
 			$("#serverstats-wrapper").html(xmlhttp.responseText);
 		}
-	}
+	};
 
 	xmlhttp.open("GET","http://tf2ss.googleplusgaming.site.nfoservers.com/?"+ $("#s").serialize(), true);
 	xmlhttp.send();
