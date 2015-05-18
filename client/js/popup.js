@@ -44,7 +44,7 @@ function toggleState()
 
 // Also launches submit button on press of enter key
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('button').addEventListener('click', submit);
+  document.querySelectorAll('button')[0].addEventListener('click', submit);
   document.querySelectorAll('input')[2].addEventListener('click',toggleState);
 });
 $("input").keypress(function(event) {
