@@ -29,9 +29,23 @@ function submit()
 	$("#sbutton").html("Submit");
 }
 
+function toggleState()
+{
+	if(document.getElementById("pass").hasAttribute("type","hidden") == false)
+	{
+		document.getElementById("pass").setAttribute("type","hidden");
+	}
+	else
+	{
+		document.getElementById("pass").removeAttribute("type","hidden");
+	}
+}
+		
+
 // Also launches submit button on press of enter key
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('button').addEventListener('click', submit);
+  document.querySelectorAll('input')[2].addEventListener('click',toggleState);
 });
 $("input").keypress(function(event) {
     if (event.which == 13) {
