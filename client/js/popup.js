@@ -21,7 +21,7 @@ function submit()
 		}
 		else
 		{
-			$("#serverstats-wrapper").html("Oh no! The request failed with error code "+xmlhttp.responseText);
+			$("#serverstats-wrapper").html("Oh no! The request failed with error code "+xmlhttp.status);
 		}
 	};
 
