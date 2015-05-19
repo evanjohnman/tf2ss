@@ -19,6 +19,10 @@ function submit()
 		{
 			$("#serverstats-wrapper").html(xmlhttp.responseText);
 		}
+		else
+		{
+			$("#serverstats-wrapper").html("Oh no! The request failed with error code "+xmlhttp.responseText);
+		}
 	};
 
 	xmlhttp.open("GET","http://tf2ss.googleplusgaming.site.nfoservers.com/?"+ $("#s").serialize(), true);
@@ -31,13 +35,13 @@ function submit()
 
 function toggleState()
 {
-	if(document.getElementById("pass").hasAttribute("type","hidden") == false)
+	if(!$("#pass").attr("type")=="hidden")
 	{
-		document.getElementById("pass").setAttribute("type","hidden");
+		$("#pass").attr("type","hidden");
 	}
 	else
 	{
-		document.getElementById("pass").removeAttribute("type","hidden");
+		$("#pass").removeAttr("type");
 	}
 }
 		
