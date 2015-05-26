@@ -25,8 +25,9 @@ function submit()
 		}
 	};
 
-	xmlhttp.open("GET","http://tf2ss.googleplusgaming.site.nfoservers.com/?"+ $("#s").serialize(), true);
-	xmlhttp.send();
+	xmlhttp.open("POST","http://tf2ss.googleplusgaming.site.nfoservers.com/index.php", true);
+	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xmlhttp.send($("#s").serialize());
 
 	$("#serverstats-wrapper").html(xmlhttp.responseText);
 
@@ -41,7 +42,7 @@ function toggleState()
 	}
 	else
 	{
-		$("#pass").removeAttr("type");
+		$("#pass").attr("type","password");
 	}
 }
 		
@@ -51,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('button')[0].addEventListener('click', submit);
   document.querySelectorAll('input')[2].addEventListener('click',toggleState);
 });
+
+//TODO: This also needs to be fixed
 $("input").keypress(function(event) {
     if (event.which == 13) {
         event.preventDefault();
