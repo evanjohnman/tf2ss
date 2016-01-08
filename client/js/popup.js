@@ -36,7 +36,7 @@ function submit()
 
 function toggleState()
 {
-	if(!$("#pass").attr("type")=="hidden")
+	if(!($("#pass").attr("type")=="hidden"))
 	{
 		$("#pass").attr("type","hidden");
 	}
