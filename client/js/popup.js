@@ -45,7 +45,6 @@ function toggleState()
 		$("#pass").attr("type","password");
 	}
 }
-		
 
 // Also launches submit button on press of enter key
 document.addEventListener('DOMContentLoaded', function () {
