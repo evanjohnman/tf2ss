@@ -3,7 +3,7 @@
 
   "name": "TF2 Server Stats",
   "description": "Returns the current status and details of a TF2 server.",
-  "version": "1.0",
+  "version": "1.2.0",
 
   "browser_action": {
     "default_icon": "imgs/icon128.png",
@@ -18,7 +18,7 @@
 
   "permissions": [
     "activeTab",
-    "http://tf2ss.googleplusgaming.site.nfoservers.com/"
+    "http://tf2ss.gplustf2.com/"
   ],
 
   "optional_permissions": [ "tabs" ]
