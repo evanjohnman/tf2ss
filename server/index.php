@@ -27,24 +27,36 @@ if (empty($_POST['pass']) && empty($_POST['ip']) && empty($_POST['port'])) heade
 		echo 'Next map: '.$Query->Rcon('nextmap'); }
 		echo $Query->Ping();
 		echo '<br><br><b>Server info</b><br><div id="i">';
-		foreach ($Query->GetInfo() as $key=>$info)
-		{
-		    echo $key.': '.$info.'<br>';
+		if (!empty($Query->GetInfo()))
+		{	
+			foreach ($Query->GetInfo() as $key=>$info)
+			{
+		  		echo $key.': '.$info.'<br>';
+			}
 		}
-		echo '</div><br><br><b>Player Info</b><br><div id="p">';
-		foreach($Query->GetPlayers() as $key=>$player)
+		else echo 'Could not retrieve the server\'s information. Check that the server is online, ports have been forwarded properly, and that it is a Team Fortress 2 dedicated server, and try again.';
+		echo '</div><br><br><b>Players</b><br><div id="p">';
+		if (!empty($Query->GetPlayers()))
 		{
-		    echo $key.': <br>';
-		    for ($countstat=2; $countstat <= 5; $countstat++)
-		    {
-			echo '<div id="p'.$key.'">&nbsp;&nbsp;&nbsp;&nbsp;'.$key.': '.$pstat.'<br></div>';
-		    }
+			foreach($Query->GetPlayers() as $key=>$player)
+			{
+		    		echo $key.': <br>';
+		    		foreach ($player as $key=>$pstat)
+		    		{
+					echo '<div id="p'.$key.'">&nbsp;&nbsp;&nbsp;&nbsp;'.$key.': '.$pstat.'<br></div>';
+		    		}
+			}
 		}
-		echo '</div><br><br><b>Convars</b><br><div id="c">';
-		foreach ($Query->GetRules() as $key=>$cvar)
+		else echo 'Could not retrieve the list of players currently connected to the server.';
+		echo '</div><br><br><b>Cvars</b><br><div id="c">';
+		if (!empty($Query->GetRules()))
 		{
-		    echo $key.': '.$cvar.'<br>';
+			foreach ($Query->GetRules() as $key=>$cvar)
+			{
+		    		echo $key.': '.$cvar.'<br>';
+			}
 		}
+		else echo 'Could not retrieve the server\'s cvars.';
 		echo '</div>';
 	}
 	catch( Exception $e )
