@@ -49,8 +49,8 @@ function toggleState()
 
 // Also launches submit button on press of enter key
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('button')[0].addEventListener('click', submit);
-  document.querySelectorAll('input')[2].addEventListener('click',toggleState);
+  document.getElementById('sbutton').addEventListener('click', submit);
+  document.getElementById('pass_toggle').addEventListener('click',toggleState);
 });
 
 //TODO: This also needs to be fixed
