@@ -25,7 +25,7 @@ function submit()
 		}
 	};
 
-	xmlhttp.open("POST","http://tf2ss.googleplusgaming.site.nfoservers.com/index.php", true);
+	xmlhttp.open("POST","http://tf2ss.gplustf2.com/index.php", true);
 	xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.send($("#s").serialize());
 
